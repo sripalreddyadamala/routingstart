@@ -1,0 +1,32 @@
+
+//inorder to load or render the route  on which it is currently on.
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-10">
+            <h1>Hello World!</h1>
+          <hr>
+          <a [routerLink] = "['']" [queryParams] = "{analytics:500}" routerLinkActive = "active" [routerLinkActiveOptions] = "{exact:true}">Home</a>
+
+
+           <!--Earlier version of creating links is < a href = "> but it will hard  load all page so we need to use router link
+
+  routerlink directive allows us to specify a path or pass a link of configured routes which we have
+  <router link uses property binding since it uses property binding-->
+
+
+          <input type = "text" #id (input) = "0">
+          <a [routerLink] = "['user',id.value]" [preserveQueryParams] = "true" routerLinkActive = "active">User</a>
+<!--adding a /user will make absolute path and it does not change anything now passing user in array will give /user when we click user link
+
+Each element in the array represents segments in the url
+
+-->
+
+          <hr>
+    <router-outlet></router-outlet>
+          <!--router outlet will tell us angular2 here is the place where we should laod our components
+          first step in routes-->
+        </div>
+    </div>
+</div>
